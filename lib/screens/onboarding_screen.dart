@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Curves.easeInExpo,
+        curve: Curves.easeIn,
       ),
     );
   }
@@ -89,22 +89,29 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      "Discover Best \nPlace To Vacation",
-                      style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        height: 1.1,
-                        color: Colors.black,
-                        shadows: [
-                          const Shadow(
-                            color: Colors.black,
-                            offset: Offset(1, 0),
-                          ),
-                        ],
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0, 0.5),
+                      end: const Offset(0, 0),
+                    ).animate(_controller),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        "Discover Best \nPlace To Vacation",
+                        style:
+                            Theme.of(context).textTheme.displayLarge?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          height: 1.1,
+                          color: Colors.black,
+                          shadows: [
+                            const Shadow(
+                              color: Colors.black,
+                              offset: Offset(1, 0),
+                            ),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
@@ -113,16 +120,22 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      "Lorem Ipsum available, but the majority have \nsuffered alteration in some form.",
-                      style: TextStyle(
-                        fontSize: height * 0.02,
-                        height: 1.4,
-                        color: const Color(0xff818181),
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0, 1),
+                      end: const Offset(0, 0),
+                    ).animate(_controller),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        "Lorem Ipsum available, but the majority have \nsuffered alteration in some form.",
+                        style: TextStyle(
+                          fontSize: height * 0.02,
+                          height: 1.4,
+                          color: const Color(0xff818181),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
