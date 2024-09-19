@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/features/home/presentation/home_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -50,7 +51,15 @@ class _OnboardingScreenState extends State<OnboardingScreen>
         ),
         child: FittedBox(
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                CupertinoPageRoute(
+                  builder: (context) {
+                    return const HomeScreen();
+                  },
+                ),
+              );
+            },
             shape: const CircleBorder(),
             child: const Icon(CupertinoIcons.arrow_right),
           ),

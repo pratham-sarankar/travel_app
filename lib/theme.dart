@@ -27,7 +27,7 @@ class MaterialTheme {
       onErrorContainer: Color(0xff410002),
       background: Color(0xfffaf8ff),
       onBackground: Color(0xff1a1b20),
-      surface: Color(0xfffaf8ff),
+      surface: Colors.white,
       onSurface: Color(0xff1a1b20),
       surfaceVariant: Color(0xffe1e2ec),
       onSurfaceVariant: Color(0xff44464f),
@@ -359,23 +359,26 @@ class MaterialTheme {
     return theme(darkHighContrastScheme().toColorScheme());
   }
 
-  ThemeData theme(ColorScheme colorScheme) => ThemeData(
-        useMaterial3: true,
-        brightness: colorScheme.brightness,
-        colorScheme: colorScheme,
-        textTheme: textTheme.apply(
-          bodyColor: colorScheme.onSurface,
-          displayColor: colorScheme.onSurface,
-        ),
-        scaffoldBackgroundColor: colorScheme.surface,
-        canvasColor: colorScheme.surface,
-        floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Color(0xff051945),
-          foregroundColor: Colors.white,
-        ),
-        //Font
-        fontFamily: 'GillSansNova',
-      );
+  ThemeData theme(ColorScheme colorScheme) {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: colorScheme.brightness,
+      colorScheme: colorScheme,
+      textTheme: textTheme.apply(
+        bodyColor: colorScheme.onSurface,
+        displayColor: colorScheme.onSurface,
+      ),
+      scaffoldBackgroundColor: colorScheme.surface,
+      canvasColor: colorScheme.surface,
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Color(0xff051945),
+        foregroundColor: Colors.white,
+      ),
+      appBarTheme: AppBarTheme(),
+      //Font
+      fontFamily: 'GillSansNova',
+    );
+  }
 
   List<ExtendedColor> get extendedColors => [];
 }
