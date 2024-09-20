@@ -8,18 +8,28 @@ class AppBottomBar extends StatefulWidget {
 }
 
 class _AppBottomBarState extends State<AppBottomBar> {
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Container(
-      height: height * 0.1,
-      margin: EdgeInsets.symmetric(
-        horizontal: width * 0.1,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(0.5),
-        borderRadius: BorderRadius.circular(100),
+    return DefaultTabController(
+      length: 4,
+      child: TabBar(
+        tabs: [
+          Tab(
+            icon: Icon(Icons.home),
+          ),
+          Tab(
+            icon: Icon(Icons.search),
+          ),
+          Tab(
+            icon: Icon(Icons.favorite),
+          ),
+          Tab(
+            icon: Icon(Icons.person),
+          ),
+        ],
       ),
     );
   }

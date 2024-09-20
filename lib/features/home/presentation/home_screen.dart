@@ -15,19 +15,19 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 0,
-              child: Image.asset(
-                'assets/Capture.PNG',
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.topCenter,
-              ),
-            ),
+            // Positioned(
+            //   top: 0,
+            //   right: 0,
+            //   left: 0,
+            //   bottom: 0,
+            //   child: Image.asset(
+            //     'assets/Capture.PNG',
+            //     fit: BoxFit.fitWidth,
+            //     alignment: Alignment.bottomCenter,
+            //   ),
+            // ),
             const Positioned(
-              bottom: 0,
+              bottom: 10,
               right: 0,
               left: 0,
               child: AppBottomBar(),
